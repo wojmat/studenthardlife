@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="pl.edu.uwr.studenthardlife.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_detalFragment"
+            app:destination="@id/detalFragment" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detalFragment"
+        android:name="pl.edu.uwr.studenthardlife.DetalFragment"
+        android:label="fragment_detal"
+        tools:layout="@layout/fragment_detal" >
+        <action
+            android:id="@+id/action_detalFragment_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" >
+        <argument
+            android:name="valNum"
+            app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_detalFragment_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" >
+        <argument
+            android:name="valId"
+            app:argType="integer" />
+                    </action>
+        <action
+            android:id="@+id/action_detalFragment_to_fragmentGalery"
+            app:destination="@id/fragmentGalery" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAdd"
+        android:name="pl.edu.uwr.studenthardlife.Add"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/fragmentEdit"
+        android:name="pl.edu.uwr.studenthardlife.Edit"
+        android:label="fragment_detal"
+        tools:layout="@layout/fragment_detal" />
+    <fragment
+        android:id="@+id/fragmentGalery"
+        android:name="pl.edu.uwr.studenthardlife.FragmentGalery"
+        android:label="fragment_galery"
+        tools:layout="@layout/fragment_galery" >
+        <action
+            android:id="@+id/action_fragmentGalery_to_fragmentAddPhoto"
+            app:destination="@id/fragmentAddPhoto" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddPhoto"
+        android:name="pl.edu.uwr.studenthardlife.AddPhoto"
+        android:label="FragmentAddPhoto" >
+        <action
+            android:id="@+id/action_fragmentAddPhoto_to_fragmentGalery"
+            app:destination="@id/fragmentGalery" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>
